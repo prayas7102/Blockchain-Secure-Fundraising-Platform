@@ -20,8 +20,7 @@ var input = {
         }
     }
 }; 
-const output = JSON.parse(solc.compile(JSON.stringify(input)));
-
+const output = JSON.parse(solc.compile(JSON.stringify(input))).contracts['Campaign.sol'];
 fs.ensureDirSync(buildPath);
 
 for (let contract in output) {
