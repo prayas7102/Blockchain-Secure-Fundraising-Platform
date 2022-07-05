@@ -13,6 +13,7 @@ let accounts;
 let factory;
 let campaignAddress;
 let campaign;
+
 //compiledFactory.abi is abi interface
 //compiledFactory.evm.bytecode.object is bytecode
 
