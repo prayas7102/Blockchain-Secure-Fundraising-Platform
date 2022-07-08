@@ -1,10 +1,11 @@
 import web3 from './web3';
-require("dotenv").config({ path: '../.env' });
+
 const compiledFactory = require('./build/CampaignFactory.json');
 const compiledCampaign = require('./build/Campaign.json');
 
-const instance = new web3.eth.Contract(
-    (compiledFactory.abi), `${process.env.DEPLOYED_ADDRESS}`
+const address = web3.utils.toChecksumAddress(process.env.DEPLOYED_ADDRESS)
+const Instance = new web3.eth.Contract(
+    (compiledFactory.abi), `${address}`
 );
 
-export default instance;
+export default Instance;
