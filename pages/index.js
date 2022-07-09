@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Factory from '../ethereum/factory';
-function index() {
+
+const CampaignIndex = async () => {
+  const [campaigns, setCampaigns] = useState([]);
+  const res = await Promise.all(Factory.methods.getDeployedCampaigns().call());
+  setCampaigns(res);
+  console.log(campaigns);
+
+  // useEffect(async () => {
+  //   const res = await Promise.all(Factory.methods.getDeployedCampaigns().call())
+  //   .then(()=>{
+  //     setCampaigns(res);
+  //     console.log(campaigns);
+  //   })
+  //   .catch((err)=>{
+  //     console.log("err");
+  //   })
+  // }, []);
+
   return (
-    <div>index</div>
+    <div>CampaignIndex</div>
   )
 }
 
-export default index;
+export default CampaignIndex;

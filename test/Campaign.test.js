@@ -28,7 +28,7 @@ beforeEach(async () => {
     });
 
     [campaignAddress] = await factory.methods.getDeployedCampaigns().call();
-    console.log('campaignAddress',campaignAddress);
+    console.log('campaignAddress', campaignAddress);
     campaign = await new web3.eth.Contract((compiledCampaign.abi), campaignAddress);
 });
 
