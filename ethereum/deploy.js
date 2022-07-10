@@ -18,15 +18,6 @@ const deploy = async () => {
         .deploy({ data: compiledFactory.evm.bytecode.object })
         .send({ from: accounts[0], gas: '9000000' })
 
-    // new web3.eth.Contract(compiledFactory.abi)
-    //     .deploy({ data: compiledFactory.evm.bytecode.object })
-    //     .send({ from: accounts[0], gas: '90000000' })
-
-    // new web3.eth.Contract([...], '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe', {
-    //     from: '0x1234567890123456789012345678901234567891', // default from address
-    //     gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
-    // });
-
     console.log('contract deployed to', result.options.address);
 }
 deploy();

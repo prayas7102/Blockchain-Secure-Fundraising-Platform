@@ -5,14 +5,14 @@ const CampaignIndex = () => {
 
   useEffect(() => {
     async function getCampaign(){
-      res = await Factory.methods.getDeployedCampaigns().call();
+      res = await (Factory.methods.getDeployedCampaigns().call());
       console.log(res);
     }
     getCampaign();
   }, []);
 
   return (
-    <div>CampaignIndex {res}</div>
+    <div>CampaignIndex</div>
   )
 }
 
