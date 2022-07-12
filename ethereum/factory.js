@@ -5,7 +5,7 @@ Contract.setProvider("https://rinkeby.infura.io/v3/d74f06effce04fdcbe3465483b46f
 
 const Instance = new Contract(
     (compiledFactory.abi),
-    "0xd3B3a31517C5776C024116264273362494dEaCc5",
+    "0x81E3bE14e1Dba985c46d899E905635a7fB4656Ee",
 );
 const res = await Instance.methods.getDeployedCampaigns().call();
 console.log(res);
