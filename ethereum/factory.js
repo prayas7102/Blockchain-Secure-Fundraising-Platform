@@ -1,14 +1,13 @@
-import web3 from './web3.js';
 import compiledFactory from './build/CampaignFactory.json' assert { type: 'json' };
+import Contract from 'web3-eth-contract';
 
-const address = web3.utils.toChecksumAddress(process.env.DEPLOYED_ADDRESS)
-const Instance = new web3.eth.Contract(
+Contract.setProvider("https://rinkeby.infura.io/v3/d74f06effce04fdcbe3465483b46f07f");
+
+const Instance = new Contract(
     (compiledFactory.abi),
-    `${address}`
+    "0xd3B3a31517C5776C024116264273362494dEaCc5",
 );
-
-Instance._address = '0x7290468c20b0EE00B11Ce977dF054E7F630672f1';
+const res = await Instance.methods.getDeployedCampaigns().call();
+console.log(res);
 export default Instance;
-
-//const res = await Instance.methods.getDeployedCampaigns.call();
 // use this command to run this file : node --experimental-json-modules factory.js
