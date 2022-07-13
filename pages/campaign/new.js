@@ -1,35 +1,49 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
-import { Button, Checkbox, Form, Input } from 'semantic-ui-react';
+import { Button, Form, Input, Message } from 'semantic-ui-react';
 import Factory from '../../ethereum/factory';
+import Web3 from 'web3';
 
 function New() {
-  const [minContribution, setMinContribution] = useState(0);
+  const [contribution, setContribution] = useState(
+    {
+      minContribution: '',
+      errMssg: '',
+      loading: false
+    });
+
   submitMinContribution = (event) => {
     event.preventDefault();
-    await Factory.methods.createCampaign(minContribution)
-    // .send({from})
+    setContribution({ loading: true, errMssg: '' });
+    try {
+      const accounts = await Web3.eth.getAccounts();
+      await Factory.methods.createCampaign(contribution.minContribution)
+        .send({ from: accounts[0] })
+    }
+    catch (err) {
+      setContribution({ errMssg: err.message });
+    }
   }
   return (
     <Layout>
       <h3>Create a Campaign</h3>
-      <Form onSubmit={submitMinContribution}>
+      <Form onSubmit={submitMinContribution} error={!!contribution.errMssg}>
         <Form.Field>
           <label>Minimum Contribution</label>
           <Input
             label="wei"
             labelPosition="right"
             placeholder='Minimum Contribution'
-            value={minContribution}
+            value={contribution.minContribution}
             onChange={(e) => {
-              setMinContribution(e.target.value)
+              setContribution({ minContribution: e.target.value })
             }}
           />
         </Form.Field>
-        <Button type='submit' primary>Submit</Button>
+        <Message error header="Oops!" content={contribution.errMssg} />
+        <Button type='submit' loading={contribution.loading} primary>Create</Button>
       </Form>
     </Layout>
   )
 }
-
 export default New;

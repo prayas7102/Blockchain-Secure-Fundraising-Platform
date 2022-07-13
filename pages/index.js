@@ -11,7 +11,7 @@ const CampaignIndex = ({ props }) => {
       fluid: true
     };
   });
-  console.log(items)
+
   return (
     <Layout>
       <div>
