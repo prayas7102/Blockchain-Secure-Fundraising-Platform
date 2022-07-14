@@ -13,8 +13,9 @@ const handle = app.getRequestHandler()
 app.prepare()
     .then(() => {
         const server = express();
-        server.get('/campaign/:address', (req, res) => {
-            res.redirect('/campaign/show');
+        createServer(handle).get('/campaign/:address', (req, res) => {
+            console.log(99)
+            app.add('/campaign/Show');
         });
         server.get('*', (req, res) => {
             return handle(req, res);
