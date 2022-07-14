@@ -8,7 +8,7 @@ const CampaignIndex = ({ props }) => {
   const items = props.map((addr) => {
     return {
       header: addr,
-      description: <Link><a>View Campaign</a></Link>,
+      description: <Link href={`/pages/campaign/:${addr}`}><a>View Campaign</a></Link>,
       fluid: true
     };
   });
