@@ -12,7 +12,7 @@ function New() {
       loading: false
     });
 
-  submitMinContribution = (event) => {
+  const submitMinContribution = async(event) => {
     event.preventDefault();
     setContribution({ loading: true, errMssg: '' });
     try {
@@ -24,6 +24,7 @@ function New() {
       setContribution({ errMssg: err.message });
     }
   }
+
   return (
     <Layout>
       <h3>Create a Campaign</h3>
@@ -46,4 +47,5 @@ function New() {
     </Layout>
   )
 }
+
 export default New;
