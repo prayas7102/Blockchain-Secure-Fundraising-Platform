@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Factory from '../ethereum/factory';
 import Layout from '../components/Layout';
+import Link from 'next/link';
 import { Card, Button } from 'semantic-ui-react';
 
 const CampaignIndex = ({ props }) => {
   const items = props.map((addr) => {
     return {
       header: addr,
-      description: <a>View Campaign</a>,
+      description: <Link><a>View Campaign</a></Link>,
       fluid: true
     };
   });

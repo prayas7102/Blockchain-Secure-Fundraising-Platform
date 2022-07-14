@@ -11,16 +11,19 @@ const app = next({ dev, hostname, port })
 const handle = app.getRequestHandler()
 
 app.prepare()
-.then(() => {
-    const server = express();
-    server.get('*',(req,res)=>{
-        return handle(req,res);
+    .then(() => {
+        const server = express();
+        server.get('/campaign/:address', (req, res) => {
+            res.redirect('/campaign/show');
+        });
+        server.get('*', (req, res) => {
+            return handle(req, res);
+        });
+        server.listen(3000, (err) => {
+            if (err) throw err;
+            console.log('Server Ready');
+        });
     })
-    server.listen(3000, (err) => {
-        if (err) throw err;
-        console.log('Server Ready');
+    .catch((err) => {
+        console.log(err.message);
     })
-})
-.catch((err)=>{
-    console.log(err.message);
-})
