@@ -13,7 +13,7 @@ function Header() {
                     <Link href={"/"}>
                         <a className='item'>Campaigns</a>
                     </Link>
-                    <Link href={"/campaigns/new"}>
+                    <Link href={"/campaign/new"}>
                         <a className='item'>+</a>
                     </Link>
                 </Menu.Menu>
