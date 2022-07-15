@@ -29,7 +29,7 @@ const CampaignIndex = ({ props }) => {
   )
 }
 
-CampaignIndex.getInitialProps = async (ctx) => {
+CampaignIndex.getInitialProps = async () => {
   const res = await (Factory.methods.getDeployedCampaigns().call());
   return { props: res }
 }
