@@ -75,4 +75,24 @@ contract Campaign {
         requestToFinalize.complete = true;
         requestToFinalize.recipent.transfer(requestToFinalize.value);
     }
+
+    function getSummary(uint256 index)
+        public
+        view
+        returns (
+            uint256,
+            uint256,
+            uint256,
+            uint256,
+            address
+        )
+    {
+        return (
+            this.balance,
+            request.length,
+            minContribution,
+            approversCount,
+            manager
+        );
+    }
 }
