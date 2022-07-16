@@ -99,4 +99,8 @@ contract Campaign {
     function getAllRequests()public view returns(request[]){
         return request;
     }
+
+    function getRequestsCount()public view returns(request[]){
+        return request.length;
+    }
 }
