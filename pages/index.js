@@ -21,7 +21,7 @@ const CampaignIndex = ({ props }) => {
           floated="right"
           content="Create Campaign"
           icon="add circle"
-          primary 
+          primary
         />
         <Card.Group items={items} />
       </div>

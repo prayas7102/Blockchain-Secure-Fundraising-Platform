@@ -8,7 +8,11 @@ import { Card, Grid, Button } from 'semantic-ui-react';
 import Link from 'next/link';
 
 ShowCampaign.getInitialProps = async ({ props }) => {
-    const campaign = Campaign(props.address);
+
+    const router = useRouter();
+    const { addr } = router.query;
+
+    const campaign = Campaign(addr);
     const summary = await campaign.methods.getSummary().call();
     return {
         mininmumContribution: summary[2],

@@ -11,7 +11,9 @@ function ContributionForm({ props }) {
         errMssg: '',
         loading: false
     });
+    
     const router = useRouter();
+
     const submitMinContribution = async (event) => {
         event.preventDefault();
         const campaign = Campaign(props.address);
