@@ -24,6 +24,9 @@ app.prepare()
         //     console.log('/pages/campaign/?campaign=address');
         // });
         
+        server.get('/campaign/:address/requests', (req, res) => {
+            server.render('/campaign/requests/index')
+        })
         server.get('*', (req, res) => {
             return handle(req, res);
         });
