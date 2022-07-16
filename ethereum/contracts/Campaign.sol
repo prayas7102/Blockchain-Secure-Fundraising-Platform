@@ -95,4 +95,8 @@ contract Campaign {
             manager
         );
     }
+
+    function getAllRequests()public view returns(request[]){
+        return request;
+    }
 }
