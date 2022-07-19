@@ -94,6 +94,9 @@ Start the server
 2. Separate login for approvers and entrepreneurs. 
 3. Discussuion forums like reddit for approvers to decide whether to contribute or not.
 4. Images for requests using IPFS.
+5. Profile page for entrepreneurs and approvers, on which there will be listed various businesses campaign created by them and which one turned to be successful/unsuccessful, which will reflect their credibility whenever they create new request. 
+6. Users can report spam if they feel an entrepreneur is a fraud. If more than half of the users report it, that entrepreneur will be restricted from creating new business campaign in future. 
+7. Rewards to be distributed amongst the sponsors if the business campaign turns to be very successful. 
 
 ## Lessons Learned
 
