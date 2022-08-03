@@ -61,7 +61,7 @@ function ShowCampaign({ props }) {
                 <Grid.Row>
                     <Grid.Column width={10}>
                         <Card.Group items={items} />
-                        <Link rout={`/campaign/${addr}/requests`}>
+                        <Link route={`/campaign/${addr}/requests`}>
                             <a><Button primary>View Requests</Button></a>
                         </Link>
                     </Grid.Column>
