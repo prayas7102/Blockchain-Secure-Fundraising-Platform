@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8;
 
 contract CampaignFactory {
@@ -76,7 +78,7 @@ contract Campaign {
         requestToFinalize.recipent.transfer(requestToFinalize.value);
     }
 
-    function getSummary(uint256 index)
+    function getSummary(uint256)
         public
         view
         returns (
@@ -88,7 +90,7 @@ contract Campaign {
         )
     {
         return (
-            this.balance,
+            address(this).balance,
             request.length,
             minContribution,
             approversCount,
@@ -96,11 +98,11 @@ contract Campaign {
         );
     }
 
-    function getAllRequests()public view returns(request[]){
+    function getAllRequests()internal view returns(Request[] storage){
         return request;
     }
 
-    function getRequestsCount()public view returns(request[]){
+    function getRequestsCount()public view returns(uint){
         return request.length;
     }
 }
