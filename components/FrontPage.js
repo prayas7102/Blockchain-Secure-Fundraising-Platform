@@ -3,13 +3,13 @@ import "./style_front_page.css";
 
 function FrontPage() {
     return (
-        <div class="main">
-            <div class="navbar">
-                <div class="icon">
-                    <h2 class="logo">FUND RAISING</h2>
+        <div className="main">
+            <div className="navbar">
+                <div className="icon">
+                    <h2 className="logo">FUND RAISING</h2>
                 </div>
 
-                <div class="menu">
+                <div className="menu">
                     <ul>
                         <li><a href="#">HOME</a></li>
                         <li><a href="#">ABOUT</a></li>
@@ -19,27 +19,27 @@ function FrontPage() {
                     </ul>
                 </div>
 
-                <div class="search">
-                    <input class="srch" type="search" name="" placeholder="Type To text" />
-                    <a href="#"> <button class="btn">Search</button></a>
+                <div className="search">
+                    <input className="srch" type="search" name="" placeholder="Type To text" />
+                    <a href="#"> <button className="btn">Search</button></a>
                 </div>
 
             </div>
-            <div class="content">
+            <div className="content">
                 <h1>Web Design & <br /><span>Development</span> <br />Course</h1>
-                <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque
+                <p className="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque
                     expedita atque eveniet <br /> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus
                     <br /> a quae totam ipsa illum minus laudantium?</p>
 
-                <button class="cn"><a href="#">JOIN US</a></button>
+                <button className="cn"><a href="#">JOIN US</a></button>
 
-                <div class="form">
+                <div className="form">
                     <h2>Login Here</h2>
                     <input type="email" name="email" placeholder="Enter Email Here" />
                     <input type="password" name="" placeholder="Enter Password Here" />
-                    <button class="btnn"><a href="#">Login</a></button>
+                    <button className="btnn"><a href="#">Login</a></button>
 
-                    <p class="link">Don't have an account<br /><a href="#">Sign up here</a></p>
+                    <p className="link">Don't have an account<br /><a href="#">Sign up here</a></p>
                 </div>
             </div>
         </div>
