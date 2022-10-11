@@ -1,7 +1,7 @@
 import compiledFactory from './build/CampaignFactory.json' assert { type: 'json' };
 import Contract from 'web3-eth-contract';
 
-Contract.setProvider("https://rinkeby.infura.io/v3/d74f06effce04fdcbe3465483b46f07f");
+Contract.setProvider("https://goerli.infura.io/v3/d74f06effce04fdcbe3465483b46f07f");
 
 const Instance = new Contract(
     (compiledFactory.abi),
