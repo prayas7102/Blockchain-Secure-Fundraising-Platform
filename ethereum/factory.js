@@ -5,9 +5,9 @@ Contract.setProvider("https://goerli.infura.io/v3/d74f06effce04fdcbe3465483b46f0
 
 const Instance = new Contract(
     (compiledFactory.abi),
-    "0x81E3bE14e1Dba985c46d899E905635a7fB4656Ee",
+    "0xCcA492AeB454F1dCa2E4c0328556A1FB1139fDA7",
 );
-// const res = await Instance.methods.getDeployedCampaigns().call();
-// console.log(res);
+const res = await Instance.methods.getDeployedCampaigns().call();
+console.log(res);
 export default Instance;
 // use this command to run this file : node --experimental-json-modules factory.js
