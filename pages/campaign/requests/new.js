@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Message, Input } from 'semantic-ui-react';
-import Campaign from '../../../ethereum/campaign';
-import web3 from '../../../ethereum/web3';
+import Campaign from '../../factory';
+import web3 from '../../web3';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Layout from '../../../components/Layout';

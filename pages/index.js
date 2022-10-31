@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Factory from '../ethereum/factory';
+import Factory from './factory';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import { Card, Button } from 'semantic-ui-react';
@@ -8,7 +8,7 @@ const CampaignIndex = ({ props }) => {
   const items = props.map((addr) => {
     return {
       header: addr,
-      description: <Link href={`/campaign/${addr}`}><a>View Campaign</a></Link>,
+      description: <Link href={`/campaign/?addr=${addr}`}><a>View Campaign</a></Link>,
       fluid: true
     };
   });

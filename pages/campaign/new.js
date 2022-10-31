@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Button, Form, Input, Message } from 'semantic-ui-react';
-import Factory from '../../ethereum/factory';
-import web3 from '../../ethereum/web3';
-import { useRouter } from 'next/router'
+import Factory from '../factory';
+import web3 from '../web3';
+import { useRouter } from 'next/router';
 
 function New() {
   const [contribution, setContribution] = useState(

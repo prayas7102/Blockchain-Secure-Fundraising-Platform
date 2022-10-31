@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, Message } from 'semantic-ui-react';
-import Campaign from '../../ethereum/factory';
-import web3 from '../ethereum/Web3';
+import Campaign from './factory';
+import web3 from './web3';
 import { useRouter } from 'next/router';
 
 function ContributionForm({ props }) {

@@ -1,51 +1,53 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Campaign from '../../ethereum/factory';
-import Web3 from '../../ethereum/Web3';
+import Campaign from '../factory';
+import Web3 from '../web3';
 import ContributionForm from '../../components/ContributionForm';
 import Layout from '../../components/Layout';
 import { Card, Grid, Button } from 'semantic-ui-react';
 import Link from 'next/link';
 
-ShowCampaign.getInitialProps = async ({ props }) => {
+// ShowCampaign.getInitialProps = async () => {
 
+//     const router = useRouter();
+//     const { addr } = router.query;
+
+//     const campaign = Campaign(addr);
+//     const summary = await campaign.methods.getSummary().call();
+//     return {
+//         mininmumContribution: summary[2],
+//         balance: summary[0],
+//         requestCount: summary[1],
+//         approversCount: summary[3],
+//         manager: summary[4],
+//     }
+// }
+
+async function ShowCampaign() {
     const router = useRouter();
-    const { addr } = router.query;
-
+    console.log(router)
     const campaign = Campaign(addr);
     const summary = await campaign.methods.getSummary().call();
-    return {
-        mininmumContribution: summary[2],
-        balance: summary[0],
-        requestCount: summary[1],
-        approversCount: summary[3],
-        manager: summary[4],
-    }
-}
-
-function ShowCampaign({ props }) {
-    const router = useRouter();
-    const { addr } = router.query;
 
     const items = [
         {
-            header: props.manager,
+            header: summary[4],
             meta: 'Address of Manager',
             description: 'The manager created this campaign and can create request.',
             style: { overflowWrap: 'break-word' }
         },
         {
-            header: props.mininmumContribution,
+            header: summary[2],
             meta: 'Minimum Contribution in Wei',
             description: 'You must contribute at least this much wei to become approver.'
         },
         {
-            header: props.requestCount,
+            header: summary[1],
             meta: 'Number of Requests',
             description: 'A request tries to withdraw money, must be approved by approvers.'
         },
         {
-            header: props.approversCount,
+            header: summary[3],
             meta: 'Number of Approvers',
             description: 'No. of people already donated to the campaign.'
         },
