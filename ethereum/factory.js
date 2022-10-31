@@ -7,7 +7,7 @@ const Instance = new Contract(
     (compiledFactory.abi),
     "0xCcA492AeB454F1dCa2E4c0328556A1FB1139fDA7",
 );
-const res = await Instance.methods.getDeployedCampaigns().call();
+const res =  Instance.methods.getDeployedCampaigns().call();
 console.log(res);
 export default Instance;
 // use this command to run this file : node --experimental-json-modules factory.js
