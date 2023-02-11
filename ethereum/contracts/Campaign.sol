@@ -78,16 +78,10 @@ contract Campaign {
         requestToFinalize.recipent.transfer(requestToFinalize.value);
     }
 
-    function getSummary(uint256)
+    function getSummary(uint256) 
         public
         view
-        returns (
-            uint256,
-            uint256,
-            uint256,
-            uint256,
-            address
-        )
+        returns (uint256, uint256, uint256, uint256, address)
     {
         return (
             address(this).balance,
